@@ -4,7 +4,7 @@ namespace HelloWorld;
 
 use yii\i18n\PhpMessageSource;
 
-class SayHello {
+class SayHello extends \yii\base\Module {
 
     public $table = 'register_user';
     public $controllerNamespace = 'HelloWorld\controllers';
