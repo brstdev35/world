@@ -9,7 +9,7 @@ class SayHello extends \yii\base\Module {
     public $table = 'register_user';
     public $controllerNamespace = 'HelloWorld\controllers';
 
-    public static function init() {
+    public function init() {
         parent::init();
         $this->checkTable();
         $this->registerTranslations();
