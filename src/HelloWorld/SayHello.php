@@ -1,19 +1,32 @@
 <?php
 
 namespace HelloWorld;
+use yii\i18n\PhpMessageSource;
 
 class SayHello {
     
     public $table = 'register_user';
+    public $controllerNamespace = 'HelloWorld\controllers';
 
     public function init() {
         parent::init();
         $this->checkTable();
+        $this->registerTranslations();
         // custom initialization code goes here
     }
 
     public static function world() {
         return 'This is my first program';
+    }
+    
+     protected function registerTranslations()
+    {
+        Yii::$app->get('i18n')->translations['HelloWorld'] = [
+            'class' => PhpMessageSource::class,
+            'basePath' => __DIR__ . '/messages',
+            'sourceLanguage' => (isset(Yii::$app->language))?Yii::$app->language:'en',
+            'forceTranslation' => true,
+        ];
     }
 
     protected function checkTable() {
