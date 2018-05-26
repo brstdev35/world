@@ -3,6 +3,8 @@
 namespace HelloWorld;
 
 use yii\i18n\PhpMessageSource;
+use yii\helpers\Json;
+use yii\widgets\InputWidget;
 
 class SayHello extends \yii\base\Module {
 
